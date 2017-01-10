@@ -1,0 +1,22 @@
+{
+  "name": "santabot",
+  "version": "1.0.0",
+  "description": "santabot botmaster",
+  "main": "index.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "reece medway",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "santabotv2"
+  },
+  "dependencies": {
+    "request-promise": "^4.1.1",
+    "botmaster": "^2.2.3",
+    "cfenv": "^1.0.3",
+    "watson-developer-cloud": "^2.11.0"
+  }
+}
