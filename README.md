@@ -13,7 +13,7 @@ Botmaster framework with IBM Watson Conversation dependencies to deploy Facebook
     *    [Sign up](https://bluemix.net/registration) in Bluemix, or use an existing account. Your account must have available space for at least 1 app and 1 service.
 * Make sure that you have the following prerequisites installed:
     * [The Node.js runtime](https://nodejs.org/en/) (including the npm package manager)
-    * [The Cloud Foundry](https://github.com/cloudfoundry/cli#downloads) command-line client
+    * [The Cloud Foundry and BlueMix](https://console.ng.bluemix.net/docs/cli/index.html#cli) command-line client
 
 ## Getting Watson Conversation Credentials
 
