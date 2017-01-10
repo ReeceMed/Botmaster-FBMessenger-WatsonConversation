@@ -5,7 +5,7 @@ Powered by <img src="https://Botmasterai.github.io/images/Botmaster_light.svg" w
 
 Botmaster framework with IBM Watson Conversation dependencies to deploy Facebook messenger bot. Botmaster is a lightweight highly extendable, highly configurable chatbot framework. It was meant to be used both in small scale and large scale projects. Its purpose is to integrate your chatbot into a variety of messaging channels.
 <div align="center">
-<a href="https://bluemix.net/deploy?repository=https://github.com/ReeceMed/Botmaster-FB-WatsonConversation.git" # [required]><img src="https://bluemix.net/deploy/button.png" alt="Deploy to Bluemix"></a></div>
+<a href="https://bluemix.net/deploy?repository=https://github.com/ReeceMed/Botmaster-FBMessenger-WatsonConversation.git" # [required]><img src="https://bluemix.net/deploy/button.png" alt="Deploy to Bluemix"></a></div>
 
 # Before you begin
 
@@ -24,19 +24,19 @@ In order for Watson Conversation to integrate with Botmaster, the following cred
 ### Service Credentials
 ---
 1. Find your service within BlueMix and click to view the service details screen
-![Find your service] (https://github.com/ReeceMed/Botmaster-FB-WatsonConversation/blob/master/readmeimages/services.png?raw=true)
+![Find your service] (https://github.com/ReeceMed/Botmaster-FBMessenger-WatsonConversation/blob/master/readmeimages/services.png?raw=true)
 2. From this screen click the "Service Credentials" tab
-![Get workspace ID](https://github.com/ReeceMed/Botmaster-FB-WatsonConversation/blob/master/readmeimages/servicecredentials.png?raw=true)
+![Get workspace ID](https://github.com/ReeceMed/Botmaster-FBMessenger-WatsonConversation/blob/master/readmeimages/servicecredentials.png?raw=true)
 3. Copy the username and password information (we will use this later when connecting our conversation to Botmaster)
 
 ### Conversation Workspace ID
 ---
 1. Open the conversation instance you have created
 2. In the service instance detail click "Launch Tool"
-![Launch tooling](https://github.com/ReeceMed/Botmaster-FB-WatsonConversation/blob/master/readmeimages/launchtool.png?raw=true)
+![Launch tooling](https://github.com/ReeceMed/Botmaster-FBMessenger-WatsonConversation/blob/master/readmeimages/launchtool.png?raw=true)
 3. Once in the Conversation tooling locate your conversation workspace
 4. Click the menu located top right and select "View Details"
-<div align="center">![Get workspace ID](https://github.com/ReeceMed/Botmaster-FB-WatsonConversation/blob/master/readmeimages/workspaceid.png?raw=true)</div>
+<div align="center">![Get workspace ID](https://github.com/ReeceMed/Botmaster-FBMessenger-WatsonConversation/blob/master/readmeimages/workspaceid.png?raw=true)</div>
 5. Copy your workspace ID and make note (we will use this with service credentials to connect our Watson Conversation to Botmaster)
 
 
@@ -58,7 +58,7 @@ To begin working with Botmaster find documentation here [Botmaster Documentation
 
 ## Connecting IBM Watson Conversation & Facebook Messenger
 You will notice within the repository files is a manifest.yml file. This file is where we will enter our credentials to connect Botmaster to IBM Watson Conversation and Facebook Messenger. In order to achieve this change the following lines with your information.
-![Environment Variables] (https://github.com/ReeceMed/Botmaster-FB-WatsonConversation/blob/master/readmeimages/env.png?raw=true)
+![Environment Variables] (https://github.com/ReeceMed/Botmaster-FBMessenger-WatsonConversation/blob/master/readmeimages/env.png?raw=true)
 
 
 ##Logging into BlueMix
@@ -94,18 +94,18 @@ If you wish to simply deploy a Botmaster instance without having to edit any of 
 
 1. In order to setup botmatser and a webhook for messenger to link to your Watson conversation we first need to deploy a BlueMix application. So go ahead and hit the button.
 <div align="center">
-<a href="https://bluemix.net/deploy?repository=https://github.com/ReeceMed/Botmaster-FB-WatsonConversation.git/" # [required]><img src="https://bluemix.net/deploy/button.png" alt="Deploy to Bluemix"></a></div>
+<a href="https://bluemix.net/deploy?repository=https://github.com/ReeceMed/Botmaster-FBMessenger-WatsonConversation.git/" # [required]><img src="https://bluemix.net/deploy/button.png" alt="Deploy to Bluemix"></a></div>
 
 2. Log into BlueMix
 3. Give you application a unique name (this will be the URL for the base of your webhook e.g wwww.helloworld.mybluemix.net/webhook)
 4. Select the space and organisation to deploy to.
-![Name your application] (https://github.com/ReeceMed/Botmaster-FB-WatsonConversation/blob/master/readmeimages/bluemixname.png?raw=true)
+![Name your application] (https://github.com/ReeceMed/Botmaster-FBMessenger-WatsonConversation/blob/master/readmeimages/bluemixname.png?raw=true)
 5. Once complete you will be presented with this screen, now you can click edit code if you wish to add additional functionality.
-![Success deployment] (https://github.com/ReeceMed/Botmaster-FB-WatsonConversation/blob/master/readmeimages/success.png?raw=true)
+![Success deployment] (https://github.com/ReeceMed/Botmaster-FBMessenger-WatsonConversation/blob/master/readmeimages/success.png?raw=true)
 6. Once successfully deployed, go to your BlueMix app dashboard and view your app.
-![Success deployment] (https://github.com/ReeceMed/Botmaster-FB-WatsonConversation/blob/master/readmeimages/appdetail.png?raw=true)
+![Success deployment] (https://github.com/ReeceMed/Botmaster-FBMessenger-WatsonConversation/blob/master/readmeimages/appdetail.png?raw=true)
 7. Select Runtime followed by Environment Variables
-![Success deployment] (https://github.com/ReeceMed/Botmaster-FB-WatsonConversation/blob/master/readmeimages/envvar.png?raw=true)
+![Success deployment] (https://github.com/ReeceMed/Botmaster-FBMessenger-WatsonConversation/blob/master/readmeimages/envvar.png?raw=true)
 8. Populate these fields with the required information
 9. Hit save to restart your application
 
@@ -113,7 +113,7 @@ If you wish to simply deploy a Botmaster instance without having to edit any of 
    
 6. Go to your Facebook Developer page for your application
 7. Under Webhooks, create "New Subscription" for pages
-![Facebook Webhook] (https://github.com/ReeceMed/Botmaster-FB-WatsonConversation/blob/master/readmeimages/facebookwebhook.png?raw=true)
+![Facebook Webhook] (https://github.com/ReeceMed/Botmaster-FBMessenger-WatsonConversation/blob/master/readmeimages/facebookwebhook.png?raw=true)
 8. In the callback URL field, paste in your app URL from BlueMix using your webhook by default this is set to /webhook (e.g myapp.bluemix.net/messenger/webhook) or in code **line 23**
 9. Enter your verify token you created in Environent Variables or in code **Line 18**
 10. Select the following fields messages, messaging_postbacks
@@ -122,7 +122,7 @@ If you wish to simply deploy a Botmaster instance without having to edit any of 
 13. Go to Settings
 14. Locate Webhooks
 15. Subscribe your event to the page you created
-![Subscribe Webhook] (https://github.com/ReeceMed/Botmaster-FB-WatsonConversation/blob/master/readmeimages/messengerevent.png?raw=true)
+![Subscribe Webhook] (https://github.com/ReeceMed/Botmaster-FBMessenger-WatsonConversation/blob/master/readmeimages/messengerevent.png?raw=true)
 
 #Additional Links
 
