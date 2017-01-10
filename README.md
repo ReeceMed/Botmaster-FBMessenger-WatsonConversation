@@ -50,11 +50,13 @@ In order to connect to Facebook messenger, you must first have a Facebook Develo
 
 The best way to begin to utilise Botmaster is to run the app locally. This will allow you to customise the code if you so wish. If however you are happy with what is already included go ahead and skip to Getting Started with Botmaster on BlueMix.
 
-Begin by changing to the directory of the repository you have just cloned or downloaded
+Begin by changing to the directory of this repository you have just cloned or downloaded.
+	
+* This can be done via command line e.g `cd Desktop/Botmaster-FBMessenger-Watson `
 
-This can be done via command line using `cd yourdirectory`
+To customise your Botmaster framework, such as adding additional actions or API services find documentation here [Botmaster Documentation] (https://Botmasterai.github.io/) 
 
-To begin working with Botmaster find documentation here [Botmaster Documentation] (https://Botmasterai.github.io/) 
+Otherwise lets get going!
 
 ## Connecting IBM Watson Conversation & Facebook Messenger
 You will notice within the repository files is a manifest.yml file. This file is where we will enter our credentials to connect Botmaster to IBM Watson Conversation and Facebook Messenger. In order to achieve this change the following lines with your information.
