@@ -128,6 +128,17 @@ Once you have finished working on your application you can now push this to Blue
 3. Use the following command to push to BlueMix `cf push`
 	* Note: Before you use cf push ensure you have edited the manifest.yml file. You will need to update lines **6** and **7** using the unique name of your application
 
+#Exporting Your Conversation
+If you wish to export your conversation in the raw .json format to share with others or backup, this can be achieved by following:
+
+1. Log into BlueMix
+2. Locate your conversation service
+3. Within your conversation service locate you conversation instance
+![Conversation instance] (https://github.com/ReeceMed/Botmaster-FBMessenger-WatsonConversation/blob/master/readmeimages/instance.png?raw=true)
+4. Using the menu in the top right of the conversation instance
+![Menu icon] (https://github.com/ReeceMed/Botmaster-FBMessenger-WatsonConversation/blob/master/readmeimages/menuicon.png?raw=true)
+5. Click "Download as JSON"
+![Conversation instance] (https://github.com/ReeceMed/Botmaster-FBMessenger-WatsonConversation/blob/master/readmeimages/instance.png?raw=true)
 
 #Additional Links
 
