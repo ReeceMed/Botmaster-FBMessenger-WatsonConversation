@@ -126,6 +126,7 @@ Once you have finished working on your application you can now push this to Blue
 2. Login to BlueMix
 2. Change directory to your repository using `cd yourrepository`
 3. Use the following command to push to BlueMix `cf push`
+	* Note: Before you use cf push ensure you have edited the manifest.yml file. You will need to update lines **6** and **7** using the unique name of your application
 
 
 #Additional Links
