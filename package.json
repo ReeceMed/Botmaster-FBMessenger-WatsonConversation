@@ -1,7 +1,7 @@
 {
-  "name": "santabot",
+  "name": "Botmasterfb",
   "version": "1.0.0",
-  "description": "santabot botmaster",
+  "description": "botmaster fb messenger watson",
   "main": "index.js",
   "scripts": {
     "start": "node app.js",
@@ -11,7 +11,7 @@
   "license": "ISC",
   "repository": {
     "type": "git",
-    "url": "santabotv2"
+    "url": ""
   },
   "dependencies": {
     "request-promise": "^4.1.1",
