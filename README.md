@@ -53,7 +53,7 @@ If you wish to simply deploy a Botmaster instance without having to edit any of 
 
 1. In order to setup botmatser and a webhook for messenger to link to your Watson conversation we first need to deploy a BlueMix application. So go ahead and hit the button.
 <div align="center">
-<a href="https://bluemix.net/deploy?repository=https://github.com/ReeceMed/Botmaster-FBMessenger-WatsonConversation.git/" # [required]><img src="https://bluemix.net/deploy/button.png" alt="Deploy to Bluemix"></a></div>
+<a href="https://bluemix.net/deploy?repository=https://github.com/ReeceMed/Botmaster-FBMessenger-WatsonConversation.git" # [required]><img src="https://bluemix.net/deploy/button.png" alt="Deploy to Bluemix"></a></div>
 
 2. Log into BlueMix
 3. Give you application a unique name (this will be the URL for the base of your webhook e.g wwww.helloworld.mybluemix.net/webhook)
