@@ -14,15 +14,13 @@ function retrieveSession(bot, update, next) {
   next();
 }
 
-function updateSession(bot, message, next) {
+function updateSession(userId, session) {
   // update or store the session for the first time.
   // the update is expected to be found in the message object
   // for the platform. Because we don't need to send it over,
   // we delete it after saving the session.
 
-  store[message.recipient.id] = message.session;
-  delete message.session;
-  next();
+  store[userId] = session;
 }
 
 module.exports = {
