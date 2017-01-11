@@ -74,14 +74,7 @@ botmaster.on('update', (bot, update) => {
   });
 });
 
-botmaster.use('outgoing', (bot, message, next) => {
-  if (!message.message || !message.message.text) {
-    return next();
-  }
-  bot.sendIsTypingMessageTo(message.recipient.id)
-
-  .then(() => next());
-});
+botmaster.use('outgoing', watsonConversationStorageMiddleware.updateSession);
 
 botmaster.on('server running', (message) => {
   console.log(message);
