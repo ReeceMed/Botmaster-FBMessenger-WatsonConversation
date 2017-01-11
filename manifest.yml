@@ -3,8 +3,8 @@ applications:
   memory: 256M
   instances: 1
   domain: mybluemix.net
-  name: santaBotv2
-  host: santaBotv2
+  name: botmaster
+  host: botmaster-fb
   disk_quota: 512M
   env:
     WATSON_CONVERSATION_USERNAME: 'your service detail username'
