@@ -69,7 +69,8 @@ botmaster.on('update', (bot, update) => {
         console.log(err);
       })
     } else {
-      bot.reply(update, text)
+    	const watsontext = watsonUpdate.output.text;
+     bot.sendTextCascadeTo(watsontext,update.sender.id)
     }
   });
 });
