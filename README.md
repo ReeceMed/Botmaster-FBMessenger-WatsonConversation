@@ -140,6 +140,31 @@ If you wish to export your conversation in the raw .json format to share with ot
 5. Click "Download as JSON"
 ![Conversation instance] (https://github.com/ReeceMed/Botmaster-FBMessenger-WatsonConversation/blob/master/readmeimages/instance.png?raw=true)
 
+#Connecting Third Party API
+Botmaster supports Third party API integration to enable the conversation of your bot to be enriched. Within the app.js you will see a pre included Weather API that makes use of IBM Weather Company Data. 
+
+This sample code is able to be adapted to call any API function that returns a .json response. This is outputted as a message to the user within the specified channel.
+
+##Calling the API
+To invoke an API call, Botmaster requires a trigger. In this case we have set the API trigger within the watson.output.action json tag. We have set this within Watson conversation advanced dialog, when the specified node is reached by the user the action is triggered. 
+
+In the example code we have set Watson Conversation to have the following output.
+
+```
+{
+"action:"weather",
+"output":{
+	"text":"Hello World! Heres the weather!"
+	}
+}
+```
+
+Within Botmaster we have the app.js to recognise this action trigger using.
+
+```
+watsonUpdate.output.action === 'weather';
+
+```
 #Additional Links
 
 Botmaster Documentation : [Botmaster Documentation] (https://Botmasterai.github.io/)
