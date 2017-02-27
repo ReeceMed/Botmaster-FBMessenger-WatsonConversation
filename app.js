@@ -1,9 +1,51 @@
 
 const Botmaster = require('botmaster');
+const R = require('ramda');
+const {fulfillOutgoingWare} = require('botmaster-fulfill');
+const standardActions = require('botmaster-fulfill-actions');
 const watsonConversationStorageMiddleware = require('./watson_conversation_storage_middleware');
 const watson = require('watson-developer-cloud');
 const cfenv = require('cfenv');
 const request = require('request-promise');
+const myActions = {
+    weather: {
+        controller: function(params) {
+            return getWeather(params)
+                .then(function(result) {
+                    console.log(result);
+                    return 'I thought you might like a weather forecast for that location.<pause />' + result;
+                })
+                .catch(function(err) {
+                    console.log(err);
+                    return 'Sorry, not weather forecast available at the moment.';
+                });
+        }
+    },
+    buttons: {
+        controller: (params) => {
+            const buttonTitles = params.content.split(',');
+            params.update.message.quick_replies = [];
+            for (const buttonTitle of buttonTitles) {
+                params.update.message.quick_replies.push({
+                    content_type: 'text',
+                    title: buttonTitle,
+                    payload: buttonTitle,
+                });
+            }
+            return '';
+        },
+    },
+    locButton: {
+        controller: (params) => {
+            params.update.message.quick_replies = [];
+            params.update.message.quick_replies.push({
+                content_type: 'location',
+            });
+            return '';
+        },
+    },
+};
+const actions = R.merge(standardActions, myActions);
 
 const appEnv = cfenv.getAppEnv();
 
@@ -34,6 +76,9 @@ const botmasterSettings = {
 const botmaster = new Botmaster(botmasterSettings);
 
 botmaster.use('incoming', watsonConversationStorageMiddleware.retrieveSession);
+botmaster.use('outgoing', fulfillOutgoingWare({
+  actions
+}));
 
 botmaster.on('update', (bot, update) => {
   console.log(update);
@@ -83,3 +128,19 @@ botmaster.on('server running', (message) => {
 botmaster.on('error', (bot, err) => {
   console.log(err.stack);
 });
+
+function getWeather(params) {
+    const lat = params.content.split(',')[0];
+    const long = params.content.split(',')[1];
+    const requestOptions = {
+        url: 'https://twcservice.mybluemix.net/api/weather/v1/geocode/' + lat + '/' + long + '/forecast/daily/3day.json?language=en-US&units=e',
+        auth: {
+            user: 'WEATHER_USER_ID',
+            pass: 'WEATHER_PASSWORD',
+            sendImmediately: true,
+        },
+        json: true,
+    };
+    return request(requestOptions)
+        .then((body) => body.forecasts[0].narrative);
+}
