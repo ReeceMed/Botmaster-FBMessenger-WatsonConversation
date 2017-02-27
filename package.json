@@ -14,9 +14,11 @@
     "url": "santabotv2"
   },
   "dependencies": {
-    "request-promise": "^4.1.1",
-    "botmaster": "^2.2.3",
+    "botmaster": "^2.2.7",
+    "botmaster-fulfill": "^2.1.5",
+    "botmaster-fulfill-actions": "^0.2.2",
     "cfenv": "^1.0.3",
+    "request-promise": "^4.1.1",
     "watson-developer-cloud": "^2.11.0"
   }
 }
