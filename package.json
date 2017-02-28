@@ -1,7 +1,7 @@
 {
-  "name": "santabot",
+  "name": "botmasterfb",
   "version": "1.0.0",
-  "description": "santabot botmaster",
+  "description": "botmaster",
   "main": "index.js",
   "scripts": {
     "start": "node app.js",
@@ -11,7 +11,7 @@
   "license": "ISC",
   "repository": {
     "type": "git",
-    "url": "santabotv2"
+    "url": ""
   },
   "dependencies": {
     "botmaster": "^2.2.7",
@@ -20,5 +20,8 @@
     "cfenv": "^1.0.3",
     "request-promise": "^4.1.1",
     "watson-developer-cloud": "^2.11.0"
+  },
+  "engines": {
+    "node": "7.x"
   }
 }
