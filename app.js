@@ -1,5 +1,6 @@
 
 const Botmaster = require('botmaster');
+const express = require('express');
 const R = require('ramda');
 const {fulfillOutgoingWare} = require('botmaster-fulfill');
 const standardActions = require('botmaster-fulfill-actions');
@@ -7,6 +8,9 @@ const watsonConversationStorageMiddleware = require('./watson_conversation_stora
 const watson = require('watson-developer-cloud');
 const cfenv = require('cfenv');
 const request = require('request-promise');
+
+const app = express();
+
 const myActions = {
     weather: {
         controller: function(params) {
@@ -22,29 +26,24 @@ const myActions = {
         }
     },
     buttons: {
-        controller: (params) => {
+        controller: (params, next) => {
             const buttonTitles = params.content.split(',');
-            params.update.message.quick_replies = [];
-            for (const buttonTitle of buttonTitles) {
-                params.update.message.quick_replies.push({
-                    content_type: 'text',
-                    title: buttonTitle,
-                    payload: buttonTitle,
-                });
-            }
+            next().then(() => {
+                params.bot.sendDefaultButtonMessageTo(buttonTitles, params.update.sender.id);
+            });
             return '';
         },
     },
     locButton: {
-        controller: (params) => {
-            params.update.message.quick_replies = [];
-            params.update.message.quick_replies.push({
+        controller: () => {
+            params.message.message.quick_replies.push({
                 content_type: 'location',
             });
             return '';
         },
     },
 };
+
 const actions = R.merge(standardActions, myActions);
 
 const appEnv = cfenv.getAppEnv();
@@ -63,14 +62,14 @@ const messengerSettings = {
     fbAppSecret: process.env.FACEBOOK_APP_SECRET,
   },
   // !! see Readme if you have any issues with understanding webhooks
-  webhookEndpoint: '/webhook/',
+  webhookEndpoint: '/webhook',
 };
 
 const botsSettings = [{ messenger: messengerSettings }];
 
 const botmasterSettings = {
   botsSettings,
-  port: appEnv.isLocal ? 3000 : appEnv.port,
+  app
 };
 
 const botmaster = new Botmaster(botmasterSettings);
@@ -121,8 +120,9 @@ botmaster.on('update', (bot, update) => {
 });
 
 
-botmaster.on('server running', (message) => {
-  console.log(message);
+const port = appEnv.isLocal ? 3000 : appEnv.port;
+app.listen(port, () => {
+  console.log(`app running on port ${port}`);
 });
 
 botmaster.on('error', (bot, err) => {

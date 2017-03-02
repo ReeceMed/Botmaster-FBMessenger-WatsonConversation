@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "node app.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "tunnel": "( while true; do lt -p 3000 -s yoursubdomain; done; )"
   },
   "author": "reece medway",
   "license": "ISC",
@@ -14,14 +15,17 @@
     "url": ""
   },
   "dependencies": {
-    "botmaster": "^2.2.7",
-    "botmaster-fulfill": "^2.1.5",
-    "botmaster-fulfill-actions": "^0.2.2",
+    "botmaster": "^2.3.0",
+    "botmaster-fulfill": "^3.1.2",
+    "botmaster-fulfill-actions": "^1.0.0",
     "cfenv": "^1.0.3",
     "request-promise": "^4.1.1",
     "watson-developer-cloud": "^2.11.0"
   },
   "engines": {
     "node": "7.x"
+  },
+  "devDependencies": {
+    "localtunnel": "^1.8.2"
   }
 }
