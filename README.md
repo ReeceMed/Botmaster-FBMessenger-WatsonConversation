@@ -93,10 +93,12 @@ Begin by changing to the directory of this repository you have just cloned or do
 
 To customise your Botmaster framework, such as adding additional actions or API services find documentation here [Botmaster Documentation] (https://Botmasterai.github.io/) 
 
+As described in the botmaster docs on [webhooks](http://botmasterai.com/getting-started/webhooks/) You can use the command `npm run tunnel`. Make sure to edit the subdomain with something appropiate for your app.
+
 Otherwise lets get going!
 
 ## Connecting IBM Watson Conversation & Facebook Messenger
-You will notice within the repository files is a manifest.yml file. This file is where we will enter our credentials to connect Botmaster to IBM Watson Conversation and Facebook Messenger. In order to achieve this change the following lines with your information.
+You will notice within the repository files is a `manifest-example.yml` file. Copy this file and call it `manifest.yml`. This file is where we will enter our credentials to connect Botmaster to IBM Watson Conversation and Facebook Messenger. In order to achieve this change the following lines with your information.
 ![Environment Variables] (https://github.com/ReeceMed/Botmaster-FBMessenger-WatsonConversation/blob/master/readmeimages/env.png?raw=true)
 
 
