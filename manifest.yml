@@ -1,0 +1,15 @@
+applications:
+- path: .
+  memory: 256M
+  instances: 1
+  domain: eu-gb.mybluemix.net
+  name: your-app-name
+  disk_quota: 512M
+  env:
+    WATSON_CONVERSATION_USERNAME: 'your convo username'
+    WATSON_CONVERSATION_PASSWORD: 'your convo password'
+    WATSON_WORKSPACE_ID: 'your workspace id'
+    FACEBOOK_PAGE_TOKEN: 'your facebook page token'
+    FACEBOOK_VERIFY_TOKEN: 'your facebook verify token'
+    FACEBOOK_APP_SECRET: 'your facebook app secret'
+    DEBUG: botmaster:*
