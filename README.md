@@ -1,6 +1,6 @@
 # Botmaster | Messenger | Watson Conversation
 <div align="center">
-Powered by <img src="https://botmasterai.github.io/images/botmaster_light.svg" width="100">
+Powered by <img src="https://botmasterai.com/images/botmaster_light.svg" width="100">
 </div>
 
 Botmaster framework with IBM Watson Conversation dependencies to deploy Facebook messenger bot. Botmaster is a lightweight highly extendable, highly configurable chatbot framework. It was meant to be used both in small scale and large scale projects. Its purpose is to integrate your chatbot into a variety of messaging channels.
@@ -98,7 +98,11 @@ As described in the botmaster docs on [webhooks](http://botmasterai.com/getting-
 Otherwise lets get going!
 
 ## Connecting IBM Watson Conversation & Facebook Messenger
+<<<<<<< Updated upstream
 You will notice within the repository files is a `manifest-example.yml` file. Copy this file and call it `manifest.yml`. This file is where we will enter our credentials to connect Botmaster to IBM Watson Conversation and Facebook Messenger. In order to achieve this change the following lines with your information.
+=======
+You will notice within your Bluemix application, in the the runtime tab locate the Environment Variables section. This is where we will enter our credentials to connect Botmaster to IBM Watson Conversation and Facebook Messenger. In order to achieve this change the following lines with your information you have gathered previously.
+>>>>>>> Stashed changes
 ![Environment Variables] (https://github.com/ReeceMed/Botmaster-FBMessenger-WatsonConversation/blob/master/readmeimages/env.png?raw=true)
 
 
@@ -141,6 +145,10 @@ If you wish to export your conversation in the raw .json format to share with ot
 ![Menu icon] (https://github.com/ReeceMed/Botmaster-FBMessenger-WatsonConversation/blob/master/readmeimages/menuicon.png?raw=true)
 5. Click "Download as JSON"
 ![Conversation instance] (https://github.com/ReeceMed/Botmaster-FBMessenger-WatsonConversation/blob/master/readmeimages/instance.png?raw=true)
+
+#Using Fulfil
+Botmaster now has an official middleware that allows you to truly enrich your conversation by using custom XML tags within your chatbot. Commands that can be used with this repository that are already integrated are:
+
 
 #Additional Links
 
